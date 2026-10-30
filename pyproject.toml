@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wordcount"
+version = "1.0.0"
+description = "Local-only word, character, chapter, and reading-time counter for manuscripts and Markdown files."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["word-count", "manuscript", "markdown", "writing", "csv", "local-first"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Environment :: Console",
+    "Topic :: Text Processing",
+]
+
+[project.scripts]
+wordcount = "wordcount.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wordcount*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
